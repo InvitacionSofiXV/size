@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación Quinceañera - Ana Sofía</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@300,400,500,600&family=Dancing+Script:wght@400,500,600,700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f9f3f5;
+            font-family: 'Cormorant Garamond', serif;
+            color: #3a2f2d;
+            overflow: hidden;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" opacity="0.05"><rect width="100" height="100" fill="none" stroke="%23ffd6e9" stroke-width="2"/></svg>');
+        }
+        
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .floral-top {
+            width: 100%;
+            max-width: 500px;
+            height: 80px;
+            margin-bottom: 20px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 80'%3E%3Cpath d='M250,10 C300,5 350,25 400,15 C450,5 500,15 500,30 C500,45 450,35 400,45 C350,55 300,35 250,40 C200,35 150,55 100,45 C50,35 0,45 0,30 C0,15 50,5 100,15 C150,25 200,5 250,10 Z' fill='%23ffbfcd' opacity='0.8'/%3E%3Cpath d='M250,20 C290,15 330,30 370,25 C410,20 450,25 450,35 C450,45 410,40 370,45 C330,50 290,35 250,40 C210,35 170,50 130,45 C90,40 50,45 50,35 C50,25 90,20 130,25 C170,30 210,15 250,20 Z' fill='%23ffcfda' opacity='0.9'/%3E%3Cpath d='M250,30 C280,25 310,35 340,30 C370,25 400,30 400,35 C400,40 370,38 340,40 C310,43 280,35 250,37 C220,35 190,43 160,40 C130,38 100,40 100,35 C100,30 130,25 160,30 C190,35 220,25 250,30 Z' fill='%23ffd9e2' opacity='0.95'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+        
+        .floral-bottom {
+            width: 100%;
+            max-width: 500px;
+            height: 80px;
+            margin-top: 20px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 80'%3E%3Cpath d='M250,70 C300,75 350,55 400,65 C450,75 500,65 500,50 C500,35 450,45 400,35 C350,25 300,45 250,40 C200,45 150,25 100,35 C50,45 0,35 0,50 C0,65 50,75 100,65 C150,55 200,75 250,70 Z' fill='%23ffbfcd' opacity='0.8'/%3E%3Cpath d='M250,60 C290,65 330,50 370,55 C410,60 450,55 450,45 C450,35 410,40 370,35 C330,30 290,45 250,40 C210,45 170,30 130,35 C90,40 50,35 50,45 C50,55 90,60 130,55 C170,50 210,65 250,60 Z' fill='%23ffcfda' opacity='0.9'/%3E%3Cpath d='M250,50 C280,55 310,45 340,50 C370,55 400,50 400,45 C400,40 370,42 340,40 C310,37 280,45 250,43 C220,45 190,37 160,40 C130,42 100,40 100,45 C100,50 130,55 160,50 C190,45 220,55 250,50 Z' fill='%23ffd9e2' opacity='0.95'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+        
+        .envelope {
+            position: relative;
+            width: 350px;
+            height: 260px;
+            background: linear-gradient(145deg, #ffb0be, #ffc6d1);
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            z-index: 1;
+        }
+        
+        .envelope:hover {
+            transform: translateY(-5px);
+        }
+        
+        .envelope:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            height: 90%;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 6px;
+        }
+        
+        .envelope-flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, #ffb0be, #ffc6d1);
+            border-radius: 8px;
+            transform-origin: top;
+            transition: transform 0.6s ease-in-out;
+            z-index: 2;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .envelope-flap:after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border-radius: 50%;
+            bottom: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .envelope-flap .names {
+            font-family: 'Dancing Script', cursive;
+            font-size: 28px;
+            font-weight: 600;
+            color: #7d4f56;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .envelope-flap .date {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 16px;
+            font-weight: 500;
+            color: #7d4f56;
+            letter-spacing: 1px;
+        }
+        
+        .envelope.open .envelope-flap {
+            transform: rotateX(180deg);
+        }
+        
+        .card {
+            position: absolute;
+            width: 330px;
+            height: 547px;
+            background: linear-gradient(to bottom, #fff8fa, #fff);
+            border: 1px solid rgba(255, 207, 218, 0.5);
+            border-radius: 6px;
+            left: 10px;
+            top: -260px;
+            z-index: 0;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.6s ease, top 0.6s ease;
+            transform-origin: bottom;
+            opacity: 0;
+        }
+        
+        .envelope.open .card {
+            top: -300px;
+            opacity: 1;
+        }
+        
+        .header {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            font-weight: 500;
+            color: #c98b95;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+        
+        .title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 36px;
+            font-weight: 700;
+            color: #c98b95;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .name {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: #7d4f56;
+            margin-bottom: 20px;
+        }
+        
+        .divider {
+            width: 60%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #ffc6d1, transparent);
+            margin: 15px auto;
+        }
+        
+        .details {
+            margin: 20px 0;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #7d4f56;
+        }
+        
+        .details strong {
+            font-weight: 600;
+            color: #c98b95;
+        }
+        
+        .dress-code {
+            margin: 15px 0;
+            padding: 10px;
+            background-color: rgba(255, 207, 218, 0.2);
+            border-radius: 5px;
+            font-size: 15px;
+            line-height: 1.4;
+        }
+        
+        .footer {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 15px;
+            color: #c98b95;
+            margin-top: 15px;
+        }
+        
+        .instruction {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 16px;
+            color: #c98b95;
+            margin-top: 10px;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+        
+        .envelope.open + .instruction {
+            opacity: 0;
+        }
+
+        @media (max-width: 600px) {
+            .envelope {
+                width: 90%;
+                height: auto;
+            }
+            
+            .card {
+                width: 90%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="floral-top"></div>
+        
+        <div class="envelope" id="envelope">
+            <div class="envelope-flap">
+                <div>
+                    <div class="names">Ana Sofía</div>
+                    <div class="date">17 Mayo | 2025</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="header">MIS QUINCE AÑOS</div>
+                <div class="divider"></div>
+                <div class="title">Celebremos juntos</div>
+                <div class="name">Ana Sofía</div>
+                
+                <div class="details">
+                    <p><strong>Misa:</strong> 17 de Mayo, 2025</p>
+                    <p class="divider"></p>
+                    <p><strong>Lugar:</strong> Parroquia San Rafael Antioquia</p>
+                    <p><strong>Hora:</strong> 4:00 PM</p>
+                    <p class="divider"></p>
+                    <p><strong>Recepción:</strong> 17 de Mayo, 2025</p>
+                    <p><strong>Hora:</strong> 7:00 PM</p>
+                    <p><strong>Lugar:</strong> Casa Cristal</p>
+                </div>
+                
+                <div class="dress-code">
+                    <strong>Código de vestimenta:</strong><br>
+                    Chicos: Camisa blanca
+                </div>
+                
+                <div class="divider"></div>
+                
+                <div class="footer">Tu presencia será mi mejor regalo</div>
+            </div>
+        </div>
+        
+        <div class="instruction">Haz clic en el sobre para abrir la invitación</div>
+        
+        <div class="floral-bottom"></div>
+    </div>
+    
+    <script>
+        document.getElementById('envelope').addEventListener('click', function() {
+            this.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
